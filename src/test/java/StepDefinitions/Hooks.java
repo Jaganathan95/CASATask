@@ -1,4 +1,4 @@
-package Framework;
+package StepDefinitions;
 
 public class Hooks {
 

@@ -3,7 +3,7 @@ Feature: CASA Feature
   @tag_example1
   Scenario Outline: verify the Example 1 scenraios
     Given user is in the '<url>'
-    When user paste the token in embedded text area
+    When user enter the 'token' 
     Then value of 'c' is 3 in payload
     And 'Invalid Signature' is displayed under Embedded text area
 
@@ -14,8 +14,16 @@ Feature: CASA Feature
 @tag_example2
   Scenario Outline: verify the Example 2 scenraios
     Given user is in the '<url>'
-    When user paste the token in embedded text area
+   When user enter the 'token'
     Then 'Invalid Signature' is displayed under Embedded text area
+    When user enter the 'secret'
+    Then The Secret Key signature is 'Valid secret'
+    And 'Signature Verified' is displayed under Embedded text area
+    And Token remains same
+    And value of 'c' is 3 in payload
+    When user modify the secret
+    Then token changed in Embedded text area
+    And payload remains same
 
     Examples: 
       | url            |

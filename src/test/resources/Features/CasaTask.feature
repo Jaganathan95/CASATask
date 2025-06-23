@@ -1,7 +1,7 @@
 Feature: CASA Feature
 
   @tag_example1
-  Scenario Outline: verify the Example 1 scenraios
+  Scenario Outline: verify the value of 'c' in payload and invalid signature is displayed when 'token' is passed
     Given user is in the '<url>'
     When user enter the 'token' 
     Then value of 'c' is 3 in payload
